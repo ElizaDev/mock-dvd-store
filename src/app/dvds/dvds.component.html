@@ -1,0 +1,32 @@
+<!-- <ul>
+    <li *ngFor="let dvd of dvds" (click)="gotoDetail(dvd.id)">
+        <span>{{dvd.title}}</span>
+    </li>
+</ul> -->
+
+<!-- <div fxFill fxLayout="column" fxLayoutAlign="space-between"> -->
+<!-- <div fxLayout="row wrap">
+        <ng-container *ngFor="let dvd of dvds" (click)="gotoDetail(dvd.id)">
+            <span>{{dvd.title}}</span>
+        </ng-container>
+    </div> -->
+<div>
+    <mat-form-field class="search-form">
+        <input matInput placeholder="Search for DVDs" type="text" [(ngModel)]="searchString" name="searchString" (keyup)="onSearchChange($event.target.value)">
+    </mat-form-field>
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="pageEvent = OnPageChange($event)">
+    </mat-paginator>
+    <mat-grid-list [cols]="breakpoint" rowHeight="1:2">
+        <mat-grid-tile *ngFor="let dvd of pagedList"
+            (click)="gotoDetail(dvd.id)">
+            <mat-grid-tile-header>
+                {{dvd.title}}
+            </mat-grid-tile-header>
+            <img src="{{dvd.image_url}}" style="height: 230px;">
+            <mat-grid-tile-footer>
+                {{dvd.price | currency : USD}}
+            </mat-grid-tile-footer>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

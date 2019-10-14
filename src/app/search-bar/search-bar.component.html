@@ -1,0 +1,10 @@
+
+<div id="search-component">
+    Search: <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+</div>
+<div>
+    <div *ngFor="let dvd of dvds | async"
+    (click)="gotoDetail(hero)" class="search-result">
+    {{dvd.title}}
+    </div>
+</div>

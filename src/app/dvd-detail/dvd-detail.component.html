@@ -1,0 +1,25 @@
+<mat-sidenav-container class="example-container">
+        <mat-sidenav mode="side" position="end" opened 
+        style="min-width: 150px !important;
+        width: 85vw !important;
+        max-width: 300px !important;"><br />
+                <span class="price">{{dvd?.price | currency: USD}}</span><br /><br />
+                <button mat-raised-button color="primary" class="cart" (click)="addToCart()">Add to Cart</button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+                <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+                <div>
+                        <h2 class="content">{{dvd?.title}}</h2>
+                        <img src="{{dvd.image_url}}"  class="content" style="height: 400px;"><br />
+                        <small  class="content">Tags: {{dvd?.genre}}</small>
+                        <h3  class="content">Description</h3>
+                        <p  class="content">{{dvd?.description}}</p>
+                </div>
+
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+
+
+
+

@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let dvd of dvds">
+            <td>{{dvd.title}}</td>
+            <td>{{dvd.price | currency: USD}}</td>
+            <td><button mat-raised-button color="warn" (click)="removeFromCart(dvds.id)" >Remove</button></td>
+    </tr>
+
+</table>
+<br />

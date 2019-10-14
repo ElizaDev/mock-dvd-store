@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.fill-right {
+    flex: 1 1 auto;
+  }
+
+.mat-dialog-container,
+mat-dialog-container {
+    width: 400px !important;
+    height: 400px !important;
+    min-width: inherit !important;
+    max-width: inherit !important;
+}
+
+.cdk-overlay-pane {
+    width: 400px !important;
+    max-width: inherit !important;
+}
